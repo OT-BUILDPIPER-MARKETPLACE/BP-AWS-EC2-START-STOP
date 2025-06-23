@@ -27,7 +27,7 @@ TAG_VALUE=${TAG_VALUE}
 ACTION=${ACTION}  # Start or Stop
 NEW_INSTANCE_TYPE=${NEW_INSTANCE_TYPE}
 
-logInfoMessage ":label: Filtering EC2 instances with tag [$TAG_KEY=$TAG_VALUE] for action [$ACTION]..."
+logInfoMessage "🏷️ Filtering EC2 instances with tag [$TAG_KEY=$TAG_VALUE] for action [$ACTION]..."
 
 INSTANCE_IDS=$(aws ec2 describe-instances \
   --filters "Name=tag:$TAG_KEY,Values=$TAG_VALUE" "Name=instance-state-name,Values=running,stopped" \
