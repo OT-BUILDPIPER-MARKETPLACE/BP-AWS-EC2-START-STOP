@@ -12,7 +12,7 @@ RUN groupadd -g 65522 buildpiper && \
 COPY --chown=buildpiper:buildpiper build.sh /home/buildpiper/build.sh
 COPY --chown=buildpiper:buildpiper BP-BASE-SHELL-STEPS /opt/buildpiper/shell-functions/
 
-# FIXED: create /bp/workspace before chown
+
 RUN mkdir -p /bp/workspace && \
     chmod +x /home/buildpiper/build.sh && \
     chown -R buildpiper:buildpiper /bp/workspace && \
